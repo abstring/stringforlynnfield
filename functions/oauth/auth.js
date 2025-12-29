@@ -13,7 +13,7 @@ export async function onRequest({ request, env }) {
 
   const redirectUri =
     env.REDIRECT_URI ||
-    `${url.origin}/.netlify/functions/oauth/callback`;
+    `${url.origin}/oauth/callback`;
 
   const githubAuth = new URL("https://github.com/login/oauth/authorize");
   githubAuth.searchParams.set("client_id", env.GITHUB_CLIENT_ID);
