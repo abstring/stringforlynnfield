@@ -1,20 +1,25 @@
-[
-  {
-    "title": "Listening Session: Curriculum & Enrichment",
-    "meta": "Saturday, April 27 • 10:00 AM • Town Common Gazebo",
-    "description": "Hear about Jillian's plan to support enrichment and ensure every student has access to rigorous learning.",
-    "link": null
-  },
-  {
-    "title": "Family Coffee Chat",
-    "meta": "Wednesday, May 8 • 8:30 AM • 3rd Street Cafe",
-    "description": "Drop in with questions, priorities, and ideas for Lynnfield schools.",
-    "link": null
-  },
-  {
-    "title": "School Committee Forum",
-    "meta": "Tuesday, May 21 • 7:00 PM • Lynnfield Middle School",
-    "description": "A moderated forum focused on student outcomes, budgeting, and collaborative leadership.",
-    "link": null
-  }
-]
+{
+  "items": [
+    {
+      "id": "event-listening-session",
+      "title": "Listening Session: Curriculum & Enrichment",
+      "meta": "Saturday, April 27 • 10:00 AM • Town Common Gazebo",
+      "description": "Hear about Jillian's plan to support enrichment and ensure every student has access to rigorous learning.",
+      "link": null
+    },
+    {
+      "id": "event-coffee-chat",
+      "title": "Family Coffee Chat",
+      "meta": "Wednesday, May 8 • 8:30 AM • 3rd Street Cafe",
+      "description": "Drop in with questions, priorities, and ideas for Lynnfield schools.",
+      "link": null
+    },
+    {
+      "id": "event-committee-forum",
+      "title": "School Committee Forum",
+      "meta": "Tuesday, May 21 • 7:00 PM • Lynnfield Middle School",
+      "description": "A moderated forum focused on student outcomes, budgeting, and collaborative leadership.",
+      "link": null
+    }
+  ]
+}

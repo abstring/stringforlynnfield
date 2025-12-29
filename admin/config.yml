@@ -25,11 +25,17 @@ collections:
         label: "Events List"
         file: "assets/data/events.json"
         fields:
-          - { name: "title", label: "Title", widget: "string" }
-          - { name: "meta", label: "Date/Time/Location", widget: "string" }
-          - { name: "description", label: "Description", widget: "text" }
-          - { name: "link", label: "Optional Link", widget: "string", required: false }
-          - { name: "linkLabel", label: "Link Label", widget: "string", required: false, default: "Learn more" }
+          - label: "Events"
+            name: "items"
+            widget: "list"
+            label_singular: "Event"
+            fields:
+              - { name: "id", label: "ID (stable, used for featuring)", widget: "string" }
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "meta", label: "Date/Time/Location", widget: "string" }
+              - { name: "description", label: "Description", widget: "text" }
+              - { name: "link", label: "Optional Link", widget: "string", required: false }
+              - { name: "linkLabel", label: "Link Label", widget: "string", required: false, default: "Learn more" }
 
   - name: "news"
     label: "News Articles"
@@ -42,7 +48,49 @@ collections:
         label: "Articles List"
         file: "assets/data/news.json"
         fields:
-          - { name: "title", label: "Title", widget: "string" }
-          - { name: "summary", label: "Summary", widget: "text" }
-          - { name: "link", label: "Link", widget: "string" }
-          - { name: "linkLabel", label: "Link Label", widget: "string", required: false, default: "Read more" }
+          - label: "Articles"
+            name: "items"
+            widget: "list"
+            label_singular: "Article"
+            fields:
+              - { name: "id", label: "ID (stable, used for featuring)", widget: "string" }
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "summary", label: "Summary", widget: "text" }
+              - { name: "link", label: "Link", widget: "string" }
+              - { name: "linkLabel", label: "Link Label", widget: "string", required: false, default: "Read more" }
+
+  - name: "featured"
+    label: "Featured Highlight"
+    format: "json"
+    editor:
+      preview: false
+    files:
+      - name: "featured"
+        label: "Front Page Highlight"
+        file: "assets/data/featured.json"
+        fields:
+          - {
+              name: "type",
+              label: "Type",
+              widget: "select",
+              options: [{ label: "Event", value: "event" }, { label: "News", value: "news" }],
+              default: "event"
+            }
+          - {
+              name: "id",
+              label: "Item",
+              widget: "select",
+              options:
+                [
+                  { label: "— Select an Event —", value: "" },
+                  { label: "Events", value: "divider-events", hint: "Do not select" },
+                  { label: "Listening Session: Curriculum & Enrichment", value: "event-listening-session" },
+                  { label: "Family Coffee Chat", value: "event-coffee-chat" },
+                  { label: "School Committee Forum", value: "event-committee-forum" },
+                  { label: "— Select a News Article —", value: "divider-news", hint: "Do not select" },
+                  { label: "Spotlight: Expanding STEM Opportunities", value: "news-stem-opportunities" },
+                  { label: "District Budget Listening Session Recap", value: "news-budget-recap" },
+                  { label: "Celebrating Student Achievement", value: "news-student-achievement" }
+                ],
+              hint: "Choose the item to feature in the hero card."
+            }

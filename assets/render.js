@@ -1,23 +1,40 @@
 (function () {
   document.addEventListener("DOMContentLoaded", () => {
-    loadSection(
-      "assets/data/events.json",
-      "[data-events-list]",
-      renderEvents,
-      "Loading events...",
-      "No upcoming events right now—check back soon."
-    );
+    const state = {
+      events: null,
+      news: null,
+      featured: null,
+    };
 
-    loadSection(
-      "assets/data/news.json",
-      "[data-news-list]",
-      renderNews,
-      "Loading news...",
-      "No news articles yet—stay tuned for updates."
-    );
+    loadSection({
+      url: "assets/data/events.json",
+      selector: "[data-events-list]",
+      renderFn: renderEvents,
+      loadingText: "Loading events...",
+      emptyText: "No upcoming events right now—check back soon.",
+      onData: (data) => {
+        state.events = normalizeList(data);
+        renderFeatured(state);
+      },
+    });
+
+    loadSection({
+      url: "assets/data/news.json",
+      selector: "[data-news-list]",
+      renderFn: renderNews,
+      loadingText: "Loading news...",
+      emptyText: "No news articles yet—stay tuned for updates.",
+      onData: (data) => {
+        state.news = normalizeList(data);
+        renderFeatured(state);
+      },
+    });
+
+    loadFeatured("assets/data/featured.json", state);
   });
 
-  async function loadSection(url, selector, renderFn, loadingText, emptyText) {
+  async function loadSection(options) {
+    const { url, selector, renderFn, loadingText, emptyText, onData } = options;
     const container = document.querySelector(selector);
     if (!container) return;
 
@@ -30,6 +47,7 @@
         return;
       }
       renderFn(container, data);
+      if (onData) onData(data);
     } catch (err) {
       console.error(`Error loading ${url}:`, err);
       setStatus(container, "Unable to load right now. Please refresh.");
@@ -121,5 +139,80 @@
     });
 
     container.appendChild(fragment);
+  }
+
+  async function loadFeatured(url, state) {
+    const container = document.querySelector("[data-featured-card]");
+    if (!container) return;
+
+    setStatus(container, "Loading highlight...");
+
+    try {
+      const data = await fetchJSON(url);
+      state.featured = data;
+      renderFeatured(state);
+    } catch (err) {
+      console.error(`Error loading ${url}:`, err);
+      setStatus(container, "Unable to load highlight right now.");
+    }
+  }
+
+  function renderFeatured(state) {
+    const container = document.querySelector("[data-featured-card]");
+    if (!container || !state.featured) return;
+
+    const { type, id } = state.featured;
+    const source = type === "news" ? state.news : state.events;
+    if (!source) return; // wait for data
+
+    const item = (source || []).find((entry) => entry.id === id);
+    if (!item) {
+      setStatus(container, "No featured item selected.");
+      return;
+    }
+
+    container.innerHTML = "";
+
+    const heading = document.createElement("h2");
+    heading.textContent = "Front Page Campaign News";
+    container.appendChild(heading);
+
+    const title = document.createElement("p");
+    title.innerHTML = `<strong>${item.title}</strong>`;
+    container.appendChild(title);
+
+    if (type === "event" && item.meta) {
+      const meta = document.createElement("p");
+      meta.textContent = item.meta;
+      container.appendChild(meta);
+    }
+
+    if (type === "news" && item.summary) {
+      const summary = document.createElement("p");
+      summary.textContent = item.summary;
+      container.appendChild(summary);
+    }
+
+    if (item.description && type === "event") {
+      const desc = document.createElement("p");
+      desc.textContent = item.description;
+      container.appendChild(desc);
+    }
+
+    if (item.link) {
+      const link = document.createElement("a");
+      link.href = item.link;
+      link.textContent = item.linkLabel || (type === "news" ? "Read more" : "Learn more");
+      link.target = "_blank";
+      link.rel = "noreferrer";
+      container.appendChild(link);
+    }
+  }
+
+  function normalizeList(data) {
+    if (!data) return [];
+    if (Array.isArray(data)) return data;
+    if (Array.isArray(data.items)) return data.items;
+    return [];
   }
 })();
