@@ -1,5 +1,7 @@
 # stringforlynnfield
 Website for Jillian String for School Committee 2026
+- Production domain: https://stringforlynnfield.com
+- Campaign contact: hello@stringforlynnfield.com
 
 ## Content editing
 - Data-driven sections live in `assets/data/events.json` and `assets/data/news.json` (each holds an `items` array).

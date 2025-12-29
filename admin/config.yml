@@ -9,8 +9,8 @@ backend:
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
-site_url: "https://your-site.example.com"
-display_url: "https://your-site.example.com"
+site_url: "https://stringforlynnfield.com"
+display_url: "https://stringforlynnfield.com"
 logo_url: "/assets/campaign-sign.png"
 
 collections:
