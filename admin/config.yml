@@ -1,0 +1,48 @@
+backend:
+  name: github
+  # TODO: set to your repo "owner/name", e.g. abstring/stringforlynnfield
+  repo: abstring/stringforlynnfield
+  branch: main
+  # Required for GitHub OAuth app; set env var in Cloudflare Pages to the URL of your backend auth function
+  base_url: ""
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+site_url: "https://your-site.example.com"
+display_url: "https://your-site.example.com"
+logo_url: "/assets/campaign-sign.png"
+
+collections:
+  - name: "events"
+    label: "Campaign Events"
+    label_singular: "Event"
+    format: "json"
+    editor:
+      preview: false
+    files:
+      - name: "events"
+        label: "Events List"
+        file: "assets/data/events.json"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - { name: "meta", label: "Date/Time/Location", widget: "string" }
+          - { name: "description", label: "Description", widget: "text" }
+          - { name: "link", label: "Optional Link", widget: "string", required: false }
+          - { name: "linkLabel", label: "Link Label", widget: "string", required: false, default: "Learn more" }
+
+  - name: "news"
+    label: "News Articles"
+    label_singular: "Article"
+    format: "json"
+    editor:
+      preview: false
+    files:
+      - name: "news"
+        label: "Articles List"
+        file: "assets/data/news.json"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - { name: "summary", label: "Summary", widget: "text" }
+          - { name: "link", label: "Link", widget: "string" }
+          - { name: "linkLabel", label: "Link Label", widget: "string", required: false, default: "Read more" }

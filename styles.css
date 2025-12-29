@@ -31,6 +31,11 @@ a {
   text-decoration: none;
 }
 
+.status-text {
+  font-weight: 700;
+  opacity: 0.8;
+}
+
 .container {
   width: min(1120px, 90vw);
   margin: 0 auto;
