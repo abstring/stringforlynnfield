@@ -13,7 +13,7 @@
       loadingText: "Loading events...",
       emptyText: "No upcoming events right now—check back soon.",
       onData: (data) => {
-        state.events = normalizeList(data);
+        state.events = data;
         renderFeatured(state);
       },
     });
@@ -25,7 +25,7 @@
       loadingText: "Loading news...",
       emptyText: "No news articles yet—stay tuned for updates.",
       onData: (data) => {
-        state.news = normalizeList(data);
+        state.news = data;
         renderFeatured(state);
       },
     });
@@ -46,8 +46,14 @@
         setStatus(container, emptyText);
         return;
       }
-      renderFn(container, data);
-      if (onData) onData(data);
+      const list = normalizeList(data);
+      if (!list || list.length === 0) {
+        setStatus(container, emptyText);
+        return;
+      }
+
+      renderFn(container, list);
+      if (onData) onData(list);
     } catch (err) {
       console.error(`Error loading ${url}:`, err);
       setStatus(container, "Unable to load right now. Please refresh.");
