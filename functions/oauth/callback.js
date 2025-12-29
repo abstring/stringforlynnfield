@@ -41,7 +41,6 @@ export async function onRequest({ request, env }) {
 
     const html = buildPostMessagePage({
       token: data.access_token,
-      provider: "github",
     });
 
     const headers = new Headers({
@@ -77,7 +76,7 @@ function buildPostMessagePage(payload) {
         try {
           const payload = ${data};
           if (window.opener) {
-            window.opener.postMessage(payload, window.location.origin);
+            window.opener.postMessage(payload, "*");
             window.close();
           } else {
             document.body.innerText = 'Authentication complete. You can close this window.';
