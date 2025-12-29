@@ -47,7 +47,7 @@ export async function onRequest({ request, env }) {
     const headers = new Headers({
       "Content-Type": "text/html",
       "Cache-Control": "no-store",
-      "Set-Cookie": "gh_oauth_state=deleted; Path=/.netlify/functions/oauth; Max-Age=0; Secure; HttpOnly; SameSite=Lax",
+      "Set-Cookie": "gh_oauth_state=deleted; Path=/oauth; Max-Age=0; Secure; HttpOnly; SameSite=Lax",
     });
 
     return new Response(html, { status: 200, headers });

@@ -23,7 +23,7 @@ export async function onRequest({ request, env }) {
 
   const headers = new Headers({
     Location: githubAuth.toString(),
-    "Set-Cookie": `gh_oauth_state=${state}; Path=/.netlify/functions/oauth; HttpOnly; Secure; SameSite=Lax`,
+    "Set-Cookie": `gh_oauth_state=${state}; Path=/oauth; HttpOnly; Secure; SameSite=Lax`,
     "Cache-Control": "no-store",
   });
 
