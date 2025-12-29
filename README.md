@@ -9,8 +9,8 @@ Website for Jillian String for School Committee 2026
 - The hero "Front Page Campaign News" card pulls from `assets/data/featured.json` and expects the `id` of a news or event item.
 
 ### Decap CMS setup (GitHub)
-1) Create a GitHub OAuth app with authorization callback `https://<your-pages-domain>/.netlify/functions/oauth/callback` (or your chosen Decap auth proxy).
-2) Set `repo` and `branch` in `admin/config.yml` to your GitHub repo (owner/name) and default branch. For the current staging domain, `base_url` is pre-set to `https://stringforlynnfield.pages.dev/.netlify/functions` and `auth_endpoint` to `oauth/auth`.
+1) Create a GitHub OAuth app with authorization callback `https://<your-pages-domain>/oauth/callback` (direct Pages Function path).
+2) Set `repo` and `branch` in `admin/config.yml` to your GitHub repo (owner/name) and default branch. For the current staging domain, `base_url` is pre-set to `https://stringforlynnfield.pages.dev` and `auth_endpoint` to `oauth/auth`.
 3) Use the bundled Cloudflare Pages Functions at `functions/oauth/auth.js` (GitHub redirect) and `functions/oauth/callback.js` (token exchange + postMessage). In Cloudflare Pages project settings, add environment variables:
    - `GITHUB_CLIENT_ID` = OAuth App client ID
    - `GITHUB_CLIENT_SECRET` = OAuth App client secret

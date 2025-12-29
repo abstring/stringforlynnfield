@@ -3,8 +3,8 @@ backend:
   # TODO: set to your repo "owner/name", e.g. abstring/stringforlynnfield
   repo: abstring/stringforlynnfield
   branch: main
-  # Cloudflare Pages Functions base for OAuth exchange
-  base_url: "https://stringforlynnfield.pages.dev/.netlify/functions"
+  # Cloudflare Pages Functions base for OAuth exchange (direct function path)
+  base_url: "https://stringforlynnfield.pages.dev"
   auth_endpoint: "oauth/auth"
 
 media_folder: "assets/uploads"
