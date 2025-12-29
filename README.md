@@ -10,10 +10,13 @@ Website for Jillian String for School Committee 2026
 
 ### Decap CMS setup (GitHub)
 1) Create a GitHub OAuth app with authorization callback `https://<your-pages-domain>/.netlify/functions/oauth/callback` (or your chosen Decap auth proxy).
-2) Deploy a small OAuth proxy (e.g., `@decap-proxy` or Netlify Functions-compatible handler) and set `base_url` in `admin/config.yml` to its URL.
-3) Set environment variables in Cloudflare Pages for the OAuth proxy (client ID/secret) as required by your proxy.
-4) Ensure `admin/config.yml` `repo` matches your GitHub repo (owner/name) and `branch` is correct.
-5) Visit `https://<your-pages-domain>/admin` to log in and edit events/news through the CMS; commits will trigger a Pages redeploy.
+2) Set `repo` and `branch` in `admin/config.yml` to your GitHub repo (owner/name) and default branch. For the current staging domain, `base_url` is pre-set to `https://stringforlynnfield.pages.dev/.netlify/functions` and `auth_endpoint` to `oauth/auth`.
+3) Use the bundled Cloudflare Pages Functions at `functions/oauth/auth.js` (GitHub redirect) and `functions/oauth/callback.js` (token exchange + postMessage). In Cloudflare Pages project settings, add environment variables:
+   - `GITHUB_CLIENT_ID` = OAuth App client ID
+   - `GITHUB_CLIENT_SECRET` = OAuth App client secret
+   - (optional) `REDIRECT_URI` if you want to pin it; otherwise the function uses the callback URL above.
+4) Deploy/redeploy the site so the function and env vars are live.
+5) Visit `https://stringforlynnfield.pages.dev/admin`, log in via GitHub, and edit events/news/featured. Saving will commit to the repo and trigger a Pages redeploy.
 
 ### Featuring a headline/event
 - Each event/news item has an `id` field (keep it stable).

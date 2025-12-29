@@ -3,14 +3,15 @@ backend:
   # TODO: set to your repo "owner/name", e.g. abstring/stringforlynnfield
   repo: abstring/stringforlynnfield
   branch: main
-  # Required for GitHub OAuth app; set env var in Cloudflare Pages to the URL of your backend auth function
-  base_url: ""
+  # Cloudflare Pages Functions base for OAuth exchange
+  base_url: "https://stringforlynnfield.pages.dev/.netlify/functions"
+  auth_endpoint: "oauth/auth"
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
-site_url: "https://stringforlynnfield.com"
-display_url: "https://stringforlynnfield.com"
+site_url: "https://stringforlynnfield.pages.dev"
+display_url: "https://stringforlynnfield.pages.dev"
 logo_url: "/assets/campaign-sign.png"
 
 collections:
