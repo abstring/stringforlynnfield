@@ -8,11 +8,18 @@
       "link": "https://www.lynnfieldma.gov/271/Election-Voting-Info"
     },
     {
-      "id": "event-coffee-chat",
-      "title": "Family Coffee Chat",
-      "meta": "TBD",
-      "description": "Meet Jillian! Drop in with questions, priorities, and ideas for Lynnfield schools.",
-      "link": null
+      "id": "virtual-meet-mhs",
+      "title": "Virtual Conversation: Middle & High School Focus",
+      "meta": "Thursday, March 12 • 7:00 PM • Zoom",
+      "description": "Middle and High School can be challenging times for families. Come and share your experiences, and let's discuss ways of moving our district forward.",
+      "link": "https://forms.gle/jPNCBd2aNvpdTNvS7"
+    },
+    {
+      "id": "virtual-meet-k4",
+      "title": "Virtual Conversation: Pre-K & Elementary Focus",
+      "meta": "Wednesday, March 18 • 7:00 PM • Zoom",
+      "description": "Come and share your experiences, and let's discuss ways of moving our district forward.",
+      "link": "https://forms.gle/dyE8zy2CQoZSoHhg7"
     }
   ]
 }
