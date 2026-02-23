@@ -35,6 +35,7 @@ collections:
               - { name: "title", label: "Title", widget: "string" }
               - { name: "meta", label: "Date/Time/Location", widget: "string" }
               - { name: "description", label: "Description", widget: "text" }
+              - { name: "registerLink", label: "Registration Link (optional)", widget: "string", required: false }
               - { name: "link", label: "Optional Link", widget: "string", required: false }
               - { name: "linkLabel", label: "Link Label", widget: "string", required: false, default: "Learn more" }
 

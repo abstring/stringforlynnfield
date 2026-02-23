@@ -241,6 +241,24 @@ a {
   margin-bottom: 0.5rem;
 }
 
+.event-link {
+  display: inline-flex;
+  margin-top: 0.9rem;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.event-register {
+  margin-top: 1rem;
+  border: 2px solid var(--gold);
+  color: var(--white);
+  letter-spacing: 0.04em;
+}
+
+.event-register:hover {
+  background: rgba(212, 162, 76, 0.25);
+}
+
 .meta {
   font-weight: 600;
   color: var(--gold);

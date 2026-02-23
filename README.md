@@ -5,6 +5,7 @@ Website for Jillian String for School Committee 2026
 
 ## Content editing
 - Data-driven sections live in `assets/data/events.json` and `assets/data/news.json` (each holds an `items` array).
+- Event items support an optional `registerLink`; when present, the site renders a `REGISTER` button.
 - Decap CMS is available at `/admin` once GitHub OAuth is configured.
 - The hero "Front Page Campaign News" card pulls from `assets/data/featured.json` and expects the `id` of a news or event item.
 

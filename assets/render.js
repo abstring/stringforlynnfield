@@ -100,10 +100,21 @@
         card.appendChild(desc);
       }
 
+      if (event.registerLink) {
+        const registerButton = document.createElement("a");
+        registerButton.href = event.registerLink;
+        registerButton.textContent = "REGISTER";
+        registerButton.className = "btn event-register";
+        registerButton.target = "_blank";
+        registerButton.rel = "noreferrer";
+        card.appendChild(registerButton);
+      }
+
       if (event.link) {
         const link = document.createElement("a");
         link.href = event.link;
         link.textContent = event.linkLabel || "Learn more";
+        link.className = "event-link";
         link.target = "_blank";
         link.rel = "noreferrer";
         card.appendChild(link);
@@ -205,10 +216,21 @@
       container.appendChild(desc);
     }
 
+    if (type === "event" && item.registerLink) {
+      const registerButton = document.createElement("a");
+      registerButton.href = item.registerLink;
+      registerButton.textContent = "REGISTER";
+      registerButton.className = "btn event-register";
+      registerButton.target = "_blank";
+      registerButton.rel = "noreferrer";
+      container.appendChild(registerButton);
+    }
+
     if (item.link) {
       const link = document.createElement("a");
       link.href = item.link;
       link.textContent = item.linkLabel || (type === "news" ? "Read more" : "Learn more");
+      if (type === "event") link.className = "event-link";
       link.target = "_blank";
       link.rel = "noreferrer";
       container.appendChild(link);
