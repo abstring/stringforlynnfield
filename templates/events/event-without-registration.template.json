@@ -1,0 +1,8 @@
+{
+  "id": "event-your-id-here",
+  "title": "Event Title Here",
+  "meta": "Day, Month Date • Time • Location",
+  "description": "Describe the event and what attendees can expect.",
+  "link": "https://example.com/details",
+  "linkLabel": "Learn more"
+}

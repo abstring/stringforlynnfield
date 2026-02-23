@@ -12,14 +12,16 @@
       "title": "Virtual Conversation: Middle & High School Focus",
       "meta": "Thursday, March 12 • 7:00 PM • Zoom",
       "description": "Middle and High School can be challenging times for families. Come and share your experiences, and let's discuss ways of moving our district forward.",
-      "link": "https://forms.gle/jPNCBd2aNvpdTNvS7"
+      "registerLink": "https://forms.gle/jPNCBd2aNvpdTNvS7",
+      "link": ""
     },
     {
       "id": "virtual-meet-k4",
       "title": "Virtual Conversation: Pre-K & Elementary Focus",
       "meta": "Wednesday, March 18 • 7:00 PM • Zoom",
       "description": "Come and share your experiences, and let's discuss ways of moving our district forward.",
-      "link": "https://forms.gle/dyE8zy2CQoZSoHhg7"
+      "registerLink": "https://forms.gle/dyE8zy2CQoZSoHhg7",
+      "link": ""
     }
   ]
 }
