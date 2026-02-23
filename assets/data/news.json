@@ -1,22 +1,22 @@
 {
   "items": [
     {
-      "id": "news-stem-opportunities",
-      "title": "Spotlight: Expanding STEM Opportunities",
-      "summary": "Placeholder for a news summary highlighting innovative programs and how Jillian plans to support them.",
-      "link": "#"
+      "id": "news-cuts-backwards",
+      "title": "Cuts would result in schools 'moving backwards'",
+      "summary": "Lynnfield's superintendent says if the schools do not get at least a 4% budget increase for FY2027, they will be forced into cuts and the district will \"move backwards\" just a year after the override. He is pushing a 4.3% plan to cover contracts and keep staffing and class sizes stable; the town's current 3.71% target is short and could mean losing positions and services.",
+      "link": "https://localheadlinenews.com/lynnfield-school-committee-budget-cuts-would-result-in-schools-moving-backwards/"
     },
     {
-      "id": "news-budget-recap",
-      "title": "District Budget Listening Session Recap",
-      "summary": "Placeholder for coverage from local media or district communications on budgeting and transparency.",
-      "link": "#"
+      "id": "news-state-of-education-2026",
+      "title": "Secretary Tutwiler Delivers Massachusetts 2026 State of Education Address",
+      "summary": "Education Secretary Patrick Tutwiler outlined the Healey-Driscoll administration's 2026 priorities, highlighting major investments from early education through higher education. The address also emphasized plans for early literacy, local district aid, and a new statewide graduation framework to prepare students for college, careers, and civic life.",
+      "link": "https://lynnfieldweeklynews.com/2026/02/03/secretary-tutwiler-delivers-massachusetts-2026-state-of-education-address/"
     },
     {
-      "id": "news-student-achievement",
-      "title": "Celebrating Student Achievement",
-      "summary": "Placeholder for stories about student success, awards, and community partnerships.",
-      "link": "#"
+      "id": "news-graduation-requirements-feedback",
+      "title": "Healey-Driscoll Administration Seeks Public Feedback on Implementation of High School Graduation Requirements",
+      "summary": "The Healey-Driscoll administration launched a public survey to gather feedback before the K-12 Statewide Graduation Council issues its final report in June 2026. Officials said input from students, families, educators, and community members will help shape how the proposed seven-part graduation framework is implemented.",
+      "link": "https://lynnfieldweeklynews.com/2026/02/17/healey-driscoll-administration-seeks-public-feedback-on-implementation-of-high-school-graduation-requirements/"
     }
   ]
 }
