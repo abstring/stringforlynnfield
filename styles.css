@@ -367,6 +367,15 @@ a {
   flex-wrap: wrap;
 }
 
+.footer .btn.outline {
+  border-color: rgba(255, 255, 255, 0.75);
+  color: var(--white);
+}
+
+.footer .btn.outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
 .footer-note {
   text-align: center;
   margin-top: 2rem;
